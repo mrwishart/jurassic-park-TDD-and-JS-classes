@@ -14,7 +14,7 @@ describe('Park', function() {
 
     dinosaur1 = new Dinosaur('t-rex', 'carnivore', 50);
     dinosaur2 = new Dinosaur('stegasaurus', 'herbivore', 30);
-    dinosaur3 = new Dinosaur('raptor', 'carnivore', 51);
+    dinosaur3 = new Dinosaur('raptor', 'omnivore', 51);
 
     dinosaur4 = new Dinosaur('t-rex', 'carnivore', 35);
     dinosaur5 = new Dinosaur('stegasaurus', 'herbivore', 43);
@@ -191,6 +191,26 @@ describe('Park', function() {
     const expected2 = [dinosaur3, dinosaur2, dinosaur5]
 
     assert.deepStrictEqual(actual2, expected2);
+
+  });
+
+  it ('should be able to provide an object, listing all the dietary types', function () {
+
+    testPark.addDinosaur(dinosaur1);
+    testPark.addDinosaur(dinosaur2);
+    testPark.addDinosaur(dinosaur3);
+    testPark.addDinosaur(dinosaur4);
+    testPark.addDinosaur(dinosaur5);
+    testPark.addDinosaur(dinosaur6);
+
+    const actual = testPark.listDietaryTypes();
+    const expected = {
+      'carnivore': 3,
+      'herbivore': 2,
+      'omnivore': 1
+    }
+
+    assert.deepStrictEqual(actual, expected);
 
   });
 

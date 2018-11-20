@@ -83,11 +83,28 @@ Park.prototype.totalRevenueByYear = function (year) {
 
 Park.prototype.removeDinosaurBySpecies = function (species) {
 
-  for (let i = this.dinosaurs.length-1; i > -1; i--) {
-    if (this.dinosaurs[i].species === species) {
-      this.dinosaurs.splice(i, 1);
+  for (let i = this.dinosaurs.length; i > 0; i--) {
+    if (this.dinosaurs[i-1].species === species) {
+      this.dinosaurs.splice(i-1, 1);
     }
   }
+
+};
+
+Park.prototype.listDietaryTypes = function () {
+
+  let listOfDietaryTypes= {};
+
+  for (dinosaur of this.dinosaurs) {
+
+    if (listOfDietaryTypes[dinosaur.diet] === undefined) {
+      listOfDietaryTypes[dinosaur.diet] = 0;
+    }
+
+    listOfDietaryTypes[dinosaur.diet]++;
+  }
+
+  return listOfDietaryTypes;
 
 };
 
