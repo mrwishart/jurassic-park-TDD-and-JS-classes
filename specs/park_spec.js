@@ -166,6 +166,32 @@ describe('Park', function() {
 
   });
 
-  it('should be able to remove all dinosaurs of a particular species');
+  it('should be able to remove all dinosaurs of a particular species', function () {
+
+    testPark.addDinosaur(dinosaur1);
+    testPark.addDinosaur(dinosaur2);
+    testPark.addDinosaur(dinosaur3);
+    testPark.addDinosaur(dinosaur4);
+    testPark.addDinosaur(dinosaur5);
+    testPark.addDinosaur(dinosaur6);
+
+    testPark.removeDinosaurBySpecies('stegasaurus');
+
+    const actual = testPark.dinosaurs;
+    const expected = [dinosaur1, dinosaur3, dinosaur4, dinosaur6];
+
+    assert.deepStrictEqual(actual, expected);
+
+    testPark.addDinosaur(dinosaur2);
+    testPark.addDinosaur(dinosaur5);
+
+    testPark.removeDinosaurBySpecies('t-rex');
+
+    const actual2 = testPark.dinosaurs;
+    const expected2 = [dinosaur3, dinosaur2, dinosaur5]
+
+    assert.deepStrictEqual(actual2, expected2);
+
+  });
 
 });

@@ -81,4 +81,14 @@ Park.prototype.totalRevenueByYear = function (year) {
 
 };
 
+Park.prototype.removeDinosaurBySpecies = function (species) {
+
+  for (let i = this.dinosaurs.length-1; i > -1; i--) {
+    if (this.dinosaurs[i].species === species) {
+      this.dinosaurs.splice(i, 1);
+    }
+  }
+
+};
+
 module.exports = Park;
