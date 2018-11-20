@@ -58,7 +58,6 @@ Park.prototype.numberOfVisitorsPerDay = function () {
 
 Park.prototype.numberOfVisitorsPerYear = function (year) {
   let numberOfDaysInTheYear;
-  const dailyVisitors = this.numberOfVisitorsPerDay();
 
   if (year % 4 === 0) {
     numberOfDaysInTheYear = 366;
@@ -67,9 +66,9 @@ Park.prototype.numberOfVisitorsPerYear = function (year) {
     numberOfDaysInTheYear = 365;
   }
 
-  const numberOfVisitorsPerYear = (numberOfDaysInTheYear * dailyVisitors);
+  const dailyVisitors = this.numberOfVisitorsPerDay();
 
-  return numberOfVisitorsPerYear;
+  return (numberOfDaysInTheYear * dailyVisitors);
 
 };
 
