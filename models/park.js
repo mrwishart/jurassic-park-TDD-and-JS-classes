@@ -73,4 +73,12 @@ Park.prototype.numberOfVisitorsPerYear = function (year) {
 
 };
 
+Park.prototype.totalRevenueByYear = function (year) {
+
+  let yearlyVisitors = this.numberOfVisitorsPerYear(year);
+  const totalRevenueByYear = yearlyVisitors * this.price;
+  return totalRevenueByYear;
+
+};
+
 module.exports = Park;

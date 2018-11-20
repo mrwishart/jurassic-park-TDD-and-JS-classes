@@ -144,7 +144,25 @@ describe('Park', function() {
 
     });
 
-    it ('calculate the total revenue from ticket sales per year');
+    it ('calculate the total revenue from ticket sales per year', function () {
+
+      testPark.addDinosaur(dinosaur1);
+      testPark.addDinosaur(dinosaur2);
+      testPark.addDinosaur(dinosaur3);
+      testPark.addDinosaur(dinosaur4);
+      testPark.addDinosaur(dinosaur5);
+      testPark.addDinosaur(dinosaur6);
+
+      const actual = testPark.totalRevenueByYear (2003);
+      const expected = 4653750; // 93075 * 50
+
+      const actual2 = testPark.totalRevenueByYear (2004);
+      const expected2 = 4666500; // 93075 * 50
+
+      assert.strictEqual(actual, expected);
+      assert.strictEqual(actual2, expected2);
+
+    });
 
   });
 
