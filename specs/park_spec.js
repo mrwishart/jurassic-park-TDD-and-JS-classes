@@ -124,7 +124,25 @@ describe('Park', function() {
 
     });
 
-    it ('calculate the number of visitors per year');
+    it ('calculate the number of visitors per year', function () {
+
+      testPark.addDinosaur(dinosaur1);
+      testPark.addDinosaur(dinosaur2);
+      testPark.addDinosaur(dinosaur3);
+      testPark.addDinosaur(dinosaur4);
+      testPark.addDinosaur(dinosaur5);
+      testPark.addDinosaur(dinosaur6);
+
+      const actual = testPark.numberOfVisitorsPerYear (2003);
+      const expected = 93075; // 255 * 365 days per year
+
+      const actual2 = testPark.numberOfVisitorsPerYear (2004);
+      const expected2 = 93330; // 255 * 366 days per year
+
+      assert.strictEqual(actual, expected);
+      assert.strictEqual(actual2, expected2);
+
+    });
 
     it ('calculate the total revenue from ticket sales per year');
 

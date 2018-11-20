@@ -10,7 +10,7 @@ Park.prototype.addDinosaur = function (dinosaur) {
 
 Park.prototype.removeDinosaur = function (dinosaur) {
   const index = this.dinosaurs.indexOf(dinosaur);
-  
+
   if (index > -1) {
     this.dinosaurs.splice(index, 1);
   }
@@ -53,6 +53,23 @@ Park.prototype.numberOfVisitorsPerDay = function () {
   }
 
   return numberOfVisitorsPerDay;
+
+};
+
+Park.prototype.numberOfVisitorsPerYear = function (year) {
+  let numberOfDaysInTheYear;
+  const dailyVisitors = this.numberOfVisitorsPerDay();
+
+  if (year % 4 === 0) {
+    numberOfDaysInTheYear = 366;
+  }
+  else {
+    numberOfDaysInTheYear = 365;
+  }
+
+  const numberOfVisitorsPerYear = (numberOfDaysInTheYear * dailyVisitors);
+
+  return numberOfVisitorsPerYear;
 
 };
 
