@@ -1,6 +1,6 @@
 # Jurassic Park JS/TDD/OOP Homework
 
-Week 6, Day 2 homework of CodeClan
+Week 6, Day 2 homework of CodeClan. Combined use of Javascript, TDD/Mocha and Object Orientated Programming
 
 ### Learning Objectives
 
